@@ -1,0 +1,55 @@
+.container {
+  background-color: #efefef;
+  margin-top: 20px;
+}
+
+#dealerHand #card, #playerHand #card {
+  height: 275px;
+  margin: 10px;
+  border-radius: 5px;
+  padding: 10px;
+  color: black;
+  font-size: 20px;
+  text-align: center;
+  box-shadow: 4px 4px 8px #bbb;
+  background-color: white;
+}
+
+#dealer {
+  display: block
+  overflow: hidden;
+}
+
+#player {
+  display: block;
+}
+
+.chip {
+  border-radius: 50%;
+  height: 60px;
+  width: 60px;
+  margin: 10px;
+  color: white;
+  font-weight: bold;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.white-chip {
+  color: black;
+  background-color: white;
+  box-shadow: 3px 3px 0 0px #bbb;
+}
+.red-chip {
+  background-color: red;
+  box-shadow: 3px 3px 0 0px maroon;
+}
+.green-chip {
+  background-color: green;
+  box-shadow: 3px 3px 0 0px darkgreen;
+}
+.black-chip {
+  background-color: #414042;
+  box-shadow: 3px 3px 0 0px black;
+}
