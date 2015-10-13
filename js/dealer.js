@@ -29,14 +29,20 @@ Dealer.prototype.dealCard = function(receiver) {
 
 }
 
-Dealer.prototype.startGame = function() {
+Dealer.prototype.startGame = (function() {
 
-  this.deck.shuffle();
+  var executed = false;
 
-  this.dealCard(this.player);
-  this.dealCard(this);
-  this.dealCard(this.player);
-  this.dealCard(this);
+  return function () {
+      if (!executed) {
+          executed = true;
+          this.deck.shuffle();
 
+          this.dealCard(this.player);
+          this.dealCard(this);
+          this.dealCard(this.player);
+          this.dealCard(this);
+      }
+  };
 
-}
+})();

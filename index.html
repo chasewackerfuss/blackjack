@@ -3,33 +3,64 @@
 <head>
   <meta charset="UTF-8">
   <title>Document</title>
+  <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,100' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <div class="container">
+  <nav>
+    <div class="container">
+      <h1 class="game-title">Blackjack</h1>
+    </div>
+  </nav>
 
-    <div class="section">
+  <div class="container gameboard">
+
+
+      <button id="startGame" class="btn btn-primary center-block">Start Game</button>
 
       <div id="blackjack">
-        <h1 class="text-center">Blackjack</h1>
-        <button id="startGame" class="btn btn-primary center-block">Start Game</button>
-        <div id="dealer">
-          <h2>Dealer Hand</h2>
-          <div id="dealerHand" class="row"></div>
+
+        <div class="dealer">
+          <div class="row">
+            <div class="col-md-6 col-md-offset-3 col-xs-8">
+              <h2>Dealer's Hand</h2>
+              <div id="dealerHand" class="flex"></div>
+            </div>
+            <div class="col-md-3 col-xs-4">
+              <h2>Deck</h2>
+              <div id="deck" class="flex">
+                <div class="deck"></div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div id="deck"></div>
-        <div id="player">
-          <div id="bet"></div>
-          <h2>Player Hand</h2>
-          <div id="playerHand" class="row"></div>
-          <div id="chips" class="row"></div>
+
+        <div class="player">
+          <div class="row">
+            <div class="col-md-6 col-md-offset-3 col-xs-8">
+              <div id="bet" class="player-bet" data-total="$350"></div>
+              <div id="playerHand" class="flex"></div>
+              <h2 id="playerName"></h2>
+              <div class="player-actions flex">
+                <button class="btn btn-primary">Hit</button>
+                <button class="btn btn-primary">Stand</button>
+              </div>
+            </div>
+            <div class="col-md-3 col-xs-4">
+              <div class="chips">
+                <h2>Chips</h2>
+                <div id="chips" class="flex"></div>
+              </div>
+            </div>
+          </div>
         </div>
+
+
       </div>
 
-    </div>
 
 
   </div>

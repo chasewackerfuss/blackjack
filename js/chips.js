@@ -18,27 +18,35 @@ function ChipSet() {
   this.chips = [];
 }
 
-ChipSet.prototype.dealChips = function(whiteCount, redCount, greenCount, blackCount) {
+ChipSet.prototype.dealChips = (function(whiteCount, redCount, greenCount, blackCount) {
 
-  for ( i = 0; i < whiteCount; i++ ) {
-    this.chips.push(whiteChip);
-  }
-  for ( i = 0; i < redCount; i++ ) {
-    this.chips.push(redChip);
-  }
-  for ( i = 0; i < greenCount; i++ ) {
-    this.chips.push(greenChip);
-  }
-  for ( i = 0; i < blackCount; i++ ) {
-    this.chips.push(blackChip);
-  }
+  var executed = false;
 
-  showChips(this);
+  return function (whiteCount, redCount, greenCount, blackCount) {
+      if (!executed) {
 
-  console.log('Player receives ' + whiteCount + ' white chips, ' + redCount + ' red chips, ' + greenCount + ' green chips, and ' + blackCount + ' black chips.')
+          executed = true;
 
+          for ( i = 0; i < whiteCount; i++ ) {
+            this.chips.push(whiteChip);
+          }
+          for ( i = 0; i < redCount; i++ ) {
+            this.chips.push(redChip);
+          }
+          for ( i = 0; i < greenCount; i++ ) {
+            this.chips.push(greenChip);
+          }
+          for ( i = 0; i < blackCount; i++ ) {
+            this.chips.push(blackChip);
+          }
 
-}
+          showChips(this);
+
+          console.log('Player receives ' + whiteCount + ' white chips, ' + redCount + ' red chips, ' + greenCount + ' green chips, and ' + blackCount + ' black chips.')
+      }
+  };
+
+})();
 
 
 

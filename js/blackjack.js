@@ -2,15 +2,20 @@ var gameboard = document.getElementById('blackjack'),
     dealerHand = document.getElementById('dealerHand'),
     playerHand = document.getElementById('playerHand'),
     startButton = document.getElementById('startGame'),
-    chips = document.getElementById('chips');
+    chips = document.getElementById('chips'),
+    playerName = document.getElementById('playerName');
 
 
 function showCard(receiver, card) {
   if (receiver instanceof Dealer) {
-    dealerHand.innerHTML += "<div id='card' class='col-md-2'>" + card.title + "</div>";
+    dealerHand.innerHTML += "<div id='card' class='card " + card.title + "'>" + card.name + "</div>";
   } else if (receiver instanceof Player) {
-    playerHand.innerHTML += "<div id='card' class='col-md-2'>" + card.title + "</div>";
+    playerHand.innerHTML += "<div id='card' class='card " + card.title + "'>" + card.name + "</div>";
   }
+}
+
+function showPlayerInfo(player) {
+  playerName.innerHTML += player.name + "'s Hand";
 }
 
 function showChips(object) {
@@ -26,5 +31,12 @@ function showChips(object) {
 
 startButton.onclick = function() {
   player.chips.dealChips(15, 10, 5, 2);
+  showPlayerInfo(player);
   dealer.startGame();
+  this.style.display = "none";
 };
+
+// window.onload = function() {
+//   player.chips.dealChips(15, 10, 5, 2);
+//   dealer.startGame();
+// };

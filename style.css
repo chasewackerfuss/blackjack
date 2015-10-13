@@ -1,18 +1,115 @@
-.container {
-  background-color: #efefef;
-  margin-top: 20px;
+body {
+  background-color: #07B16E;
+  font-family: "Roboto", Helvetica, arial;
 }
 
-#dealerHand #card, #playerHand #card {
-  height: 275px;
-  margin: 10px;
-  border-radius: 5px;
-  padding: 10px;
-  color: black;
+.game-title {
+  text-transform: uppercase;
+  color: white;
+  letter-spacing: 1px;
   font-size: 20px;
-  text-align: center;
-  box-shadow: 4px 4px 8px #bbb;
+  margin: 0 0;
+}
+
+nav {
+  background-color: #414042;
+  padding:7px 0;
+}
+
+.card {
+  border-radius: 5px;
   background-color: white;
+  height: 120px;
+  width: 77px;
+  margin: 5px;
+  padding: 5px 10px;
+  box-shadow: -1px 1px 2px #414042;
+  font-size: 20px;
+  text-transform: uppercase;
+  text-align: left;
+  position: relative;
+  margin: 0 -10px;
+  transform: rotate(-3deg);
+}
+
+.deck {
+  border-radius: 5px;
+  background-color: #058452;
+  height: 120px;
+  width: 77px;
+  margin: 5px;
+  padding: 10px;
+  background: url('images/card_back.gif') repeat center center;
+  box-shadow: 2px 2px 2px #414042,
+              4px 2px 0px #058452,
+              6px 2px 2px #414042,
+              8px 2px 0px #058452,
+              10px 2px 2px #414042,
+              12px 2px 0px #058452,
+              14px 2px 2px #414042,
+              16px 2px 0px #058452,
+              18px 2px 2px #414042,
+              20px 2px 0px #058452,
+              22px 2px 2px #414042,
+              24px 2px 0px #058452;
+  margin-left: -12px;
+  font-size: 10px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.player-actions .btn {
+  margin: 0 5px;
+  min-width: 100px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: white;
+}
+
+h2 {
+  font-weight: lighter;
+  text-align: center;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.player-bet {
+  border-radius: 50%;
+  height: 200px;
+  width: 200px;
+  border: 10px solid #058452;
+  margin: 0px auto -40px;
+  position: relative;
+}
+.player-bet:after {
+    content: attr(data-total);
+    position: absolute;
+    right: -65px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-weight: bold;
+    color: #058452;
+}
+.player-bet:before {
+    content: 'Total Bet:';
+    position: absolute;
+    right: -80px;
+    top: 40%;
+    transform: translateY(-50%);
+    font-weight: bold;
+    color: #058452;
+}
+
+.gameboard {
+  padding-top: 20px;
+}
+
+.dealer {
+  margin-bottom: 50px;
 }
 
 #dealer {
@@ -24,17 +121,22 @@
   display: block;
 }
 
+.chips {
+  margin-top: 200px;
+}
+
 .chip {
   border-radius: 50%;
-  height: 60px;
-  width: 60px;
+  height: 45px;
+  width: 45px;
   margin: 10px;
   color: white;
   font-weight: bold;
-  font-size: 24px;
+  font-size: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex: 0 0 45px;
 }
 .white-chip {
   color: black;
@@ -42,14 +144,33 @@
   box-shadow: 3px 3px 0 0px #bbb;
 }
 .red-chip {
-  background-color: red;
-  box-shadow: 3px 3px 0 0px maroon;
+  background-color: #FF7888;
+  box-shadow: 3px 3px 0 0px #C45260;
 }
 .green-chip {
-  background-color: green;
-  box-shadow: 3px 3px 0 0px darkgreen;
+  background-color: #7ED321;
+  box-shadow: 3px 3px 0 0px #5C9D15;
 }
 .black-chip {
   background-color: #414042;
   box-shadow: 3px 3px 0 0px black;
+}
+
+
+.Clubs {
+  background: url('images/club.png') no-repeat center center white;
+}
+.Spades {
+  background: url('images/spade.png') no-repeat center center white;
+}
+.Diamonds {
+  background: url('images/diamond.png') no-repeat center center white;
+  color: #d40000;
+}
+.Hearts {
+  background: url('images/heart.png') no-repeat center center white;
+  color: #d40000;
+}
+.Clubs, .Spades, .Diamonds, .Hearts {
+  background-size: 20px;
 }
